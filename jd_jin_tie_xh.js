@@ -1,6 +1,6 @@
 /**
  * 领金贴(只做签到以及互助任务里面的部分任务)
- * cron "0 10 0 * * ?" jin_tie_xh.js,tag=见缝插针
+ * cron "10 0 * * * " jin_tie_xh.js,tag=见缝插针
  * 
  *  By X1a0He
  *  活动入口：京东APP首页-领金贴，[活动地址](https://active.jd.com/forever/cashback/index/)
