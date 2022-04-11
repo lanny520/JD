@@ -1,6 +1,6 @@
 /**
  * 取关所有主播
- *cron 0 22 * * * 取关所有主播
+ * cron "0 22 * * *"  取关所有主播
  */
 const $ = new Env('取关所有主播');
 //Node.js用户请在jdCookie.js处填写京东ck;
