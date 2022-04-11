@@ -1,6 +1,6 @@
 /**
  * 微信签到领红包
- * cron "0 0 6 * *" sign_wxhb.js,tag=微信签到领红包
+ * cron "10 0 * * *" sign_wxhb.js,tag=微信签到领红包
  * by:小手冰凉 tg:@chianPLA
  */
 const $ = new Env("微信签到领红包");
