@@ -1,7 +1,7 @@
 /*
 京东保价(h5st)
 2022-02-24
- * cron "20 23 6,22 * *" price.js,tag=京东保价
+ * cron "20 6,22 * * *" price.js,tag=京东保价
  */
 const $ = new Env('京东保价');
 const notify = $.isNode() ? require('./sendNotify') : '';
