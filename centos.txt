@@ -1,0 +1,7 @@
+安装宝塔：    yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+安装docker:   curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+重启网络服务：systemctl restart network
+关闭后吧进程：ps aux | grep XXX 
+              kill -9 ID
+安装BBR:      wget -N "https://github.000060000.xyz/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+
