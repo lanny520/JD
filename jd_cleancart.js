@@ -22,7 +22,7 @@ let args_xh = {
      * 控制脚本是否执行，设置为true时才会执行删除购物车 
      * 环境变量名称：JD_CART
      */
-    clean: process.env.JD_CART === 'true' || true,
+    clean: process.env.JD_CART === 'true' || false,
     /*
      * 控制脚本运行一次取消多少条购物车数据，为0则不删除，默认为100
      * 环境变量名称：XH_CLEAN_REMOVESIZE
@@ -115,13 +115,16 @@ function getCart_xh() {
         }
         $.get(option, async (err, resp, data) => {
             try {
-                let content = getSubstr(data, "window.cartData = ", "window._PFM_TIMING").replace(/\s*/g, "");
-                data = JSON.parse(content);
+                data = getSubstr(data, "window.cartData = ", "window._PFM_TIMING");
+                data = data.replace(' ;', '');
+                data = data.replace(/\s+/g,'');
+                data = JSON.parse(data);
+
                 $.areaId = data.areaId;   // locationId的传值
                 $.traceId = data.traceId; // traceid的传值
                 venderCart = data.cart.venderCart;
                 postBody = 'pingouchannel=0&commlist=';
-                $.beforeRemove = data.cartJson.num
+                $.beforeRemove = data.cart.currentCount ? data.cart.currentCount : 0;
                 console.log(`获取到购物车数据 ${$.beforeRemove} 条`)
             } catch (e) {
                 $.logErr(e, resp);
